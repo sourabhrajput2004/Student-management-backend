@@ -12,8 +12,8 @@ import com.example.student_management_backend.repository.StudentRepository;
 import com.example.student_management_backend.service.StudentService;
 
 @CrossOrigin(origins = {
-    "http://localhost:5173",
-    "https://student-management-frontend-pi.vercel.app"
+        "http://localhost:5173",
+        "https://student-management-frontend-pi.vercel.app"
 })
 @RestController
 @RequestMapping("/api/students")
@@ -41,6 +41,13 @@ public class StudentController {
     @DeleteMapping("/{id}")
     public void deleteStudent(@PathVariable Long id) {
         studentService.deleteStudent(id);
+    }
+
+    // ✅ Update student
+    @PutMapping("/{id}")
+    public Student updateStudent(@PathVariable Long id, @RequestBody Student student) {
+        student.setId(id);
+        return studentService.saveStudent(student);
     }
 
     // 🔍 SEARCH API
