@@ -14,5 +14,8 @@ FROM eclipse-temurin:17-jre-jammy
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
-EXPOSE ${PORT}
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# EXPOSE fixed port for Docker syntax (Render will map its $PORT)
+EXPOSE 8080
+
+# Run Spring Boot on Render assigned port
+ENTRYPOINT ["sh","-c","java -jar app.jar --server.port=$PORT"]
