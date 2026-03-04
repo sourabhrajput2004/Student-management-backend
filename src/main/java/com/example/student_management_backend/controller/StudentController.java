@@ -11,7 +11,10 @@ import com.example.student_management_backend.entity.Student;
 import com.example.student_management_backend.repository.StudentRepository;
 import com.example.student_management_backend.service.StudentService;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://student-management-frontend-pi.vercel.app"
+})
 @RestController
 @RequestMapping("/api/students")
 public class StudentController {
