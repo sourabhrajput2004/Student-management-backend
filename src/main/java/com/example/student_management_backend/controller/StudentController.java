@@ -13,7 +13,7 @@ import com.example.student_management_backend.service.StudentService;
 
 @CrossOrigin(origins = {
         "http://localhost:5173",
-        "https://student-management-frontend-pi.vercel.app"
+        "https://student-management-frontend-pink.vercel.app"
 })
 @RestController
 @RequestMapping("/api/students")
