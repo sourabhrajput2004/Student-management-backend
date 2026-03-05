@@ -25,32 +25,29 @@ public class StudentController {
     @Autowired
     private StudentRepository studentRepository;
 
-    // ✅ Add student
+    
     @PostMapping
     public Student saveStudent(@RequestBody Student student) {
         return studentService.saveStudent(student);
     }
 
-    // ✅ Pagination Enabled GET
+    
     @GetMapping
     public Page<Student> getStudents(Pageable pageable) {
         return studentRepository.findAll(pageable);
     }
 
-    // ✅ Delete student
     @DeleteMapping("/{id}")
     public void deleteStudent(@PathVariable Long id) {
         studentService.deleteStudent(id);
     }
 
-    // ✅ Update student
     @PutMapping("/{id}")
     public Student updateStudent(@PathVariable Long id, @RequestBody Student student) {
         student.setId(id);
         return studentService.saveStudent(student);
     }
 
-    // 🔍 SEARCH API
     @GetMapping("/search")
     public List<Student> searchStudents(
             @RequestParam String type,
