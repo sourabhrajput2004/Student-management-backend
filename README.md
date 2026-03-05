@@ -36,7 +36,7 @@ src
 ### 1️⃣ Clone the repository
 
 
-git clone https://github.com/your-username/student-management-backend.git
+git clone https://github.com/sourabhrajput2004/student-management-backend.git
 
 
 ### 2️⃣ Configure Database
