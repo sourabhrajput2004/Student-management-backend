@@ -73,7 +73,7 @@ http://localhost:8080
 
 ## 🌐 Deployment
 
-Backend deployed on **Render / Railway**
+Backend deployed on **Render 
 
 ## 👨‍💻 Author
 
